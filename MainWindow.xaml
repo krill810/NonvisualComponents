@@ -1,0 +1,54 @@
+﻿<Window x:Class="NonvisualComponents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NonvisualComponents"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Бедарева Софья, Сторожева Анна" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Text="Группа: 9ИС435" FontSize="14"/>
+            <TextBlock Text="ПР №7: Невизуальные компоненты WPF" FontSize="14"/>
+            <TextBlock Text="Демонстрация работы с невизуальными компонентами"
+                   FontSize="12" FontStyle="Italic" Foreground="Gray"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="#F0F0F0" Padding="10" Margin="0,0,0,10">
+            <TextBlock x:Name="StopwatchDisplay"
+                   Text="00:00:00.000"
+                   FontSize="42" FontFamily="Consolas"
+                   HorizontalAlignment="Center"/>
+        </Border>
+
+        <WrapPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="StartButton" Content="Старт" Width="110" Height="35"
+                Margin="0,0,8,8" Click="StartButton_Click"/>
+            <Button x:Name="StopButton" Content="Стоп" Width="110" Height="35"
+                Margin="0,0,8,8" Click="StopButton_Click"/>
+            <Button x:Name="ResetButton" Content="Сброс" Width="110" Height="35"
+                Margin="0,0,8,8" Click="ResetButton_Click"/>
+            <Button x:Name="ShowJournalButton" Content="Показать журнал" Width="140" Height="35"
+                Margin="0,0,8,8" Click="ShowJournalButton_Click"/>
+            <Button x:Name="SaveButton" Content="Сохранить в файл" Width="140" Height="35"
+                Margin="0,0,8,8" Click="SaveButton_Click"/>
+            <Button x:Name="ExitButton" Content="Выход" Width="110" Height="35"
+                Margin="0,0,8,8" Click="ExitButton_Click"/>
+        </WrapPanel>
+
+        <ListBox x:Name="JournalListBox" Grid.Row="3" Margin="0,0,0,10"
+             FontFamily="Consolas" FontSize="13"/>
+
+        <TextBlock x:Name="StatusText" Grid.Row="4" Text="Готово. Записей: 0"
+               Foreground="DarkGreen"/>
+    </Grid>
+</Window>
